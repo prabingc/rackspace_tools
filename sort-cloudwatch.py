@@ -33,7 +33,7 @@ def list_all_alarms(client):
                 alarm[entry["Dimensions"][0]["Value"]].append(
                     {
                         "Name": entry["AlarmName"],
-                        "Threshold": f"""{entry["MetricName"]} {operatormap[entry["ComparisonOperator"]]} {entry["Threshold"]} for {entry["EvaluationPeriods"]} datapoints within {seconds_to_minute(entry["Period"]*entry["EvaluationPeriods"])}""",
+                        "Threshold": f'{entry["MetricName"]} {operatormap[entry["ComparisonOperator"]]} {entry["Threshold"]} for {entry["EvaluationPeriods"]} datapoints within {seconds_to_minute(entry["Period"]*entry["EvaluationPeriods"])}',
                         "AlarmActions": entry["AlarmActions"],
                         "State": entry["StateValue"],
                     }
